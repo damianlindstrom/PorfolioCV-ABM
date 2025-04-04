@@ -1,0 +1,46 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{ esEdicion ? 'Editar' : 'Agregar' }} Lenguaje</h4>
+    <button type="button" class="btn-close" (click)="activeModal.dismiss()"></button>
+  </div>
+  
+  <div class="modal-body">
+    <form [formGroup]="lenguajeForm">
+      <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre">
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Nivel (0-100)</label>
+        <input type="range" class="form-range" min="0" max="100" 
+               formControlName="nivel">
+        <div class="d-flex justify-content-between">
+          <span>0%</span>
+          <strong>{{ lenguajeForm.get('nivel')?.value }}%</strong>
+          <span>100%</span>
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Color</label>
+        <div class="color-picker">
+          <div *ngFor="let color of colores" 
+               class="color-option" 
+               [style.background]="color"
+               [class.selected]="lenguajeForm.get('color')?.value === color"
+               (click)="lenguajeForm.get('color')?.setValue(color)">
+          </div>
+          <input type="color" 
+                 class="form-control form-control-color mt-2"
+                 formControlName="color"
+                 [value]="lenguajeForm.get('color')?.value">
+        </div>
+      </div>
+  
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="onSubmit()" 
+               [disabled]="lenguajeForm.invalid">Guardar</button>
+      </div>
+    </form>
+  </div>

@@ -1,0 +1,27 @@
+section {
+    background-color: lightslategray;
+}
+h2 {
+    font-size: 1.2em;
+    text-decoration: underline;
+    margin: auto;
+    color: rgb(231, 231, 231);
+    font-weight: bold;
+    line-height: 2;
+}
+ul li {
+    font-size: 1.05em;
+    margin: auto;
+    color: whitesmoke;
+}
+div.d-flex h2 {
+    margin-left: 0.2em;
+}
+li.mb-4.p-3 {
+    color: white;
+}
+li.mb-4.p-3:hover{
+    border: .1em solid rgb(0, 0, 0);
+    color: black;
+    cursor: pointer;
+}

@@ -1,0 +1,28 @@
+/* Estilo para el checkbox "En curso" */
+.input-group-text {
+    cursor: pointer;
+  }
+  
+  /* Validación visual */
+  .ng-invalid.ng-touched {
+    border-color: #dc3545;
+  }
+  
+  .invalid-feedback {
+    display: block;
+    color: #dc3545;
+    font-size: 0.875em;
+  }
+  /* education-modal.component.css */
+select.form-select {
+    -webkit-appearance: menulist !important;
+    -moz-appearance: menulist !important;
+    appearance: menulist !important;
+    background-image: none !important;
+  }
+  
+  /* Elimina cualquier estilo que pueda estar ocultando las opciones */
+  option {
+    color: #000 !important;
+    background: #fff !important;
+  }

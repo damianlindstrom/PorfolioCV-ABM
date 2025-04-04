@@ -1,0 +1,31 @@
+<section class="mt-2 py-2">
+    <div class="container-fluid">
+      <div class="d-flex p-2 mb-3">
+        <h2 class="mb-0">Educación</h2>
+        <button class="btn btn-primary btn-sm" (click)="openAddModal()">
+          <i class="bi bi-plus-lg"></i> Agregar
+        </button>
+      </div>
+  
+      <ul class="list-unstyled">
+        <li *ngFor="let education of educaciones$ | async" class="mb-1 p-3">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <h5>{{ education.title }}</h5>
+              <p class="fw-bold mb-1">{{ education.institucion }}</p>
+              <p class="mb-1">Estado: {{ education.state }}</p>
+              <p>De {{ education.from }}, hasta {{ education.to }}</p>
+            </div>
+            <div class="btn-group">
+              <button class="btn btn-outline-primary btn-sm" (click)="openEditModal(education)">
+                <i class="bi bi-pencil"></i>
+              </button>
+              <button class="btn btn-outline-danger btn-sm" (click)="deleteEducation(education.id)">
+                <i class="bi bi-trash"></i>
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>

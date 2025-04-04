@@ -1,0 +1,39 @@
+<section class="mt-3 py-2">
+    <div class="container-fluid">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Lenguajes de Programación</h2>
+        <button class="btn btn-primary btn-sm" (click)="abrirModalAgregar()">
+          <i class="bi bi-plus-lg"></i> Agregar
+        </button>
+      </div>
+  
+      <div class="row">
+        <div *ngFor="let lenguaje of lenguajes$ | async" class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body text-center">
+              <h5 class="card-title">{{ lenguaje.nombre }}</h5>
+              <div class="progress mt-3" style="height: 25px;">
+                <div class="progress-bar" 
+                     role="progressbar" 
+                     [style.width.%]="lenguaje.nivel"
+                     [style.background-color]="lenguaje.color || '#0d6efd'"
+                     [attr.aria-valuenow]="lenguaje.nivel" 
+                     aria-valuemin="0" 
+                     aria-valuemax="100">
+                  <span class="progress-text">{{ lenguaje.nivel }}%</span>
+                </div>
+              </div>
+              <div class="mt-3">
+                <button class="btn btn-outline-primary btn-sm me-2" (click)="abrirModalEditar(lenguaje)">
+                  <i class="bi bi-pencil"></i> Editar
+                </button>
+                <button class="btn btn-outline-danger btn-sm" (click)="eliminarLenguaje(lenguaje.id)">
+                  <i class="bi bi-trash"></i> Eliminar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

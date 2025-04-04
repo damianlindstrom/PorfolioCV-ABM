@@ -1,0 +1,16 @@
+div.container {
+    background-color: lightslategray;
+}
+img {
+    max-width: 15em;
+}
+div.bio {
+    max-width: 600px;
+}
+
+p.lead {
+    font-size: 1.15em;
+    margin: auto;
+    color: whitesmoke;
+    
+}

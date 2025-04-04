@@ -1,0 +1,30 @@
+<section class="mt-0 py-2">
+    <div class="container-fluid">
+      <div class="d-flex mb-3">
+        <h2 class="mb-0">Cursos</h2>
+        <button class="btn btn-primary btn-sm" (click)="abrirModalAgregar()">
+          <i class="bi bi-plus-lg"></i> Agregar
+        </button>
+      </div>
+  
+      <ul class="list-unstyled">
+        <li *ngFor="let curso of cursos$ | async" class="mb-4 p-3">
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <h5>{{ curso.title }}</h5>
+              <p class="fw-bold mb-1">{{ curso.institucion }}</p>
+              <p>De {{ curso.from }}, hasta {{ curso.to }}</p>
+            </div>
+            <div class="btn-group">
+              <button class="btn btn-outline-primary btn-sm" (click)="abrirModalEditar(curso)">
+                <i class="bi bi-pencil"></i>
+              </button>
+              <button class="btn btn-outline-danger btn-sm" (click)="eliminarCurso(curso.id)">
+                <i class="bi bi-trash"></i>
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>

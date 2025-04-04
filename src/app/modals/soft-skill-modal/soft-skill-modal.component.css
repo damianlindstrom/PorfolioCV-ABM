@@ -1,0 +1,30 @@
+input[type="range"].form-range {
+    -webkit-appearance: none;
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 5px;
+  }
+  
+  input[type="range"].form-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #0d6efd;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  /* Efecto para campos inválidos */
+  .ng-invalid.ng-touched {
+    border-color: #dc3545;
+  }
+  
+  .invalid-feedback {
+    color: #dc3545;
+    font-size: 0.875em;
+  }
+  
+  /* Estilo para el botón de guardar deshabilitado */
+  .btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;}

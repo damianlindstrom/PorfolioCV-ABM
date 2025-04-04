@@ -1,0 +1,39 @@
+<div class="modal-header">
+    <h4 class="modal-title">Editar Perfil</h4>
+    <button type="button" class="btn-close" (click)="activeModal.dismiss()"></button>
+  </div>
+  
+  <div class="modal-body">
+    <form [formGroup]="perfilForm">
+      <div class="mb-4 text-center">
+        <div class="d-flex flex-column align-items-center">
+          <img [src]="fotoPrevisualizacion" alt="Foto de perfil" 
+               class="rounded-circle mb-3" style="width: 150px; height: 150px; object-fit: cover;">
+          
+          <div class="mb-3">
+            <label for="fotoInput" class="btn btn-primary">
+              <i class="bi bi-camera"></i> Cambiar foto
+              <input id="fotoInput" type="file" accept="image/*" 
+                    (change)="onFileSelected($event)" class="d-none">
+            </label>
+          </div>
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Biografía</label>
+        <textarea class="form-control" formControlName="bio" rows="5"></textarea>
+        <div *ngIf="perfilForm.get('bio')?.invalid && perfilForm.get('bio')?.touched" 
+             class="invalid-feedback">
+          La biografía es obligatoria (máx. 500 caracteres)
+        </div>
+        <small class="text-muted">{{ perfilForm.get('bio')?.value?.length || 0 }}/500 caracteres</small>
+      </div>
+  
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="onSubmit()" 
+               [disabled]="perfilForm.invalid">Guardar</button>
+      </div>
+    </form>
+  </div>

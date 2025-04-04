@@ -1,0 +1,66 @@
+<div class="modal-header">
+    <h4 class="modal-title">Editar información personal</h4>
+    <button type="button" class="btn-close" (click)="onCancel()"></button>
+  </div>
+  
+  <div class="modal-body">
+    <form [formGroup]="personalDataForm">
+      <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre">
+        <div *ngIf="personalDataForm.get('nombre')?.invalid && personalDataForm.get('nombre')?.touched" 
+             class="text-danger">
+          Nombre es obligatorio
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Apellido</label>
+        <input type="text" class="form-control" formControlName="apellido">
+        <div *ngIf="personalDataForm.get('apellido')?.invalid && personalDataForm.get('apellido')?.touched" 
+             class="text-danger">
+          Apellido es obligatorio
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Fecha de Nacimiento</label>
+        <input type="text" class="form-control" formControlName="fechaNacimiento">
+        <div *ngIf="personalDataForm.get('fechaNacimiento')?.invalid && personalDataForm.get('fechaNacimiento')?.touched" 
+             class="text-danger">
+          Fecha es obligatoria
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" formControlName="email">
+        <div *ngIf="personalDataForm.get('email')?.errors?.['required'] && personalDataForm.get('email')?.touched" 
+             class="text-danger">
+          Email es obligatorio
+        </div>
+        <div *ngIf="personalDataForm.get('email')?.errors?.['email'] && personalDataForm.get('email')?.touched" 
+             class="text-danger">
+          Ingrese un email válido
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Domicilio</label>
+        <input type="text" class="form-control" formControlName="domicilio">
+        <div *ngIf="personalDataForm.get('domicilio')?.invalid && personalDataForm.get('domicilio')?.touched" 
+             class="text-danger">
+          Domicilio es obligatorio
+        </div>
+      </div>
+    </form>
+  </div>
+  
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-secondary" (click)="onCancel()">Cancelar</button>
+    <button type="button" class="btn btn-primary" 
+            (click)="handleSubmit()" 
+            [disabled]="personalDataForm.invalid">
+      Guardar
+    </button>
+  </div>

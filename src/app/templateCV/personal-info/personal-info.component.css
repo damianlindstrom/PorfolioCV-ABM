@@ -1,0 +1,38 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+}
+section{
+    background-color: lightslategray;
+}
+h2 {
+    font-size: 1.2em;
+    text-decoration: underline;
+    margin: auto;
+    color: rgb(231, 231, 231);
+    font-weight: bold;
+    line-height: 2;
+}
+ul {
+    justify-content: left;
+    list-style-type: disc;
+}
+
+div#edicionInfo {
+    background-color: whitesmoke;
+    padding: 4em;
+}
+button.btn.btn-primary {
+    max-width: fit-content;
+    margin-left: 1em;
+}ul li {
+    background-color: transparent;
+    border-color: transparent;
+    padding: 0.1em;
+    color: whitesmoke;
+}
+.bullet {
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1;
+  }

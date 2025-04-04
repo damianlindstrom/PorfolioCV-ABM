@@ -1,0 +1,30 @@
+<section class="mt-4 py-3">
+  <div class="row">
+    <button class="btn btn-primary" (click)="edicionPersonalData()">
+      <i class="bi bi-pencil"></i> Editar información
+    </button>
+  </div>
+
+  <div class="container-fluid mt-3" *ngIf="personalData$ | async as personalData">
+    <h2>Información personal</h2>
+    <ul class="list-unstyled">
+      <li class="d-flex align-items-center mb-2">
+        <span class="bullet me-2">•</span>
+        {{ personalInfoApplicant.personalCookie.nombreApplicant }} 
+        {{ personalInfoApplicant.personalCookie.apellidoApplicant }}
+      </li>
+      <li class="d-flex align-items-center mb-2">
+        <span class="bullet me-2">•</span>
+        {{ personalInfoApplicant.personalCookie.fechaNacimientoApplicant }}
+      </li>
+      <li class="d-flex align-items-center mb-2">
+        <span class="bullet me-2">•</span>
+        {{ personalInfoApplicant.personalCookie.eMailApplicant }}
+      </li>
+      <li class="d-flex align-items-center mb-2">
+        <span class="bullet me-2">•</span>
+        {{ personalInfoApplicant.personalCookie.domicilioApplicant }}
+      </li>    
+    </ul>
+  </div>
+</section>

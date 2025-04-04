@@ -1,0 +1,51 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{ esEdicion ? 'Editar' : 'Agregar' }} Curso</h4>
+    <button type="button" class="btn-close" (click)="activeModal.dismiss()"></button>
+  </div>
+  
+  <div class="modal-body">
+    <form [formGroup]="cursoForm">
+      <div class="mb-3">
+        <label class="form-label">Título del Curso</label>
+        <input type="text" class="form-control" formControlName="title">
+        <div *ngIf="cursoForm.get('title')?.invalid && cursoForm.get('title')?.touched" 
+             class="invalid-feedback">
+          Este campo es obligatorio
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Institución</label>
+        <input type="text" class="form-control" formControlName="institucion">
+        <div *ngIf="cursoForm.get('institucion')?.invalid && cursoForm.get('institucion')?.touched" 
+             class="invalid-feedback">
+          Este campo es obligatorio
+        </div>
+      </div>
+  
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label class="form-label">Fecha de inicio</label>
+          <input type="date" class="form-control" formControlName="from">
+          <div *ngIf="cursoForm.get('from')?.invalid && cursoForm.get('from')?.touched" 
+               class="invalid-feedback">
+            Este campo es obligatorio
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Fecha de finalización</label>
+          <input type="date" class="form-control" formControlName="to">
+          <div *ngIf="cursoForm.get('to')?.invalid && cursoForm.get('to')?.touched" 
+               class="invalid-feedback">
+            Este campo es obligatorio
+          </div>
+        </div>
+      </div>
+  
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="onSubmit()" 
+               [disabled]="cursoForm.invalid">Guardar</button>
+      </div>
+    </form>
+  </div>

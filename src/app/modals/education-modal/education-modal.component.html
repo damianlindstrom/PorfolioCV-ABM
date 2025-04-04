@@ -1,0 +1,57 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{ isEdit ? 'Editar' : 'Agregar' }} Educación</h4>
+    <button type="button" class="btn-close" (click)="activeModal.dismiss()"></button>
+  </div>
+  
+  <div class="modal-body">
+    <form [formGroup]="educationForm">
+      <div class="mb-3">
+        <label class="form-label">Título/Certificación</label>
+        <input type="text" class="form-control" formControlName="title">
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Institución</label>
+        <input type="text" class="form-control" formControlName="institucion">
+      </div>
+  
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label class="form-label">Fecha de inicio</label>
+          <input type="date" class="form-control" formControlName="from">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Fecha de finalización</label>
+          <div class="input-group">
+            <input type="date" class="form-control" formControlName="to" 
+                   [disabled]="educationForm.get('state')?.value === 'En curso'">
+            <div class="input-group-text">
+              <input class="form-check-input mt-0" type="checkbox" 
+                     (change)="toggleCurrent($event)" 
+                     [checked]="educationForm.get('state')?.value === 'En curso'">
+              <label class="ms-2">En curso</label>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Estado</label>
+        <select class="form-select" formControlName="state">
+          <option [ngValue]="null" disabled>Seleccione un estado</option>
+          <option *ngFor="let state of states" [ngValue]="state.value">
+            {{ state.display }}
+          </option>
+        </select>
+        <div *ngIf="educationForm.get('state')?.invalid && educationForm.get('state')?.touched" 
+             class="invalid-feedback">
+          Debe seleccionar un estado
+        </div>
+      </div>
+  
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="onSubmit()" 
+               [disabled]="educationForm.invalid">Guardar</button>
+      </div>
+    </form>

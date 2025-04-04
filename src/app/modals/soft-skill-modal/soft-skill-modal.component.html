@@ -1,0 +1,32 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{ isEdit ? 'Editar' : 'Agregar' }} Habilidad Blanda</h4>
+    <button type="button" class="btn-close" (click)="activeModal.dismiss()"></button>
+  </div>
+  
+  <div class="modal-body">
+  
+    <form [formGroup]="skillForm">
+      <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre">
+        <div *ngIf="skillForm.get('nombre')?.invalid && skillForm.get('nombre')?.touched" 
+             class="invalid-feedback">
+          {{ skillForm.get('nombre')?.errors?.['required'] ? 'El nombre es obligatorio' : '' }}
+          {{ skillForm.get('nombre')?.errors?.['maxlength'] ? 'Máximo 50 caracteres' : '' }}
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Nivel: {{ skillForm.get('nivel')?.value }}%</label>
+        <input type="range" class="form-range" min="0" max="100" formControlName="nivel">
+      </div>
+  
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss()">Cancelar</button>
+        <button type="submit" class="btn btn-primary" (click)="onSubmit()" 
+                [disabled]="skillForm.invalid">
+          Guardar
+        </button>
+      </div>
+    </form>
+  </div>

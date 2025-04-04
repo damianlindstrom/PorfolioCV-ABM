@@ -1,0 +1,59 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{ isEdit ? 'Editar' : 'Agregar' }} Experiencia Laboral</h4>
+    <button type="button" class="btn-close" (click)="activeModal.dismiss()"></button>
+  </div>
+  
+  <div class="modal-body">
+    <form [formGroup]="experienciaForm">
+      <div class="mb-3">
+        <label class="form-label">Puesto de trabajo</label>
+        <input type="text" class="form-control" formControlName="jobTitle">
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Empresa</label>
+        <input type="text" class="form-control" formControlName="empresa">
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Tipo de relación</label>
+        <select class="form-select" formControlName="situation">
+          <option value="" disabled selected>Seleccione una opción</option>
+          <option *ngFor="let situacion of situaciones" [value]="situacion">
+            {{ situacion }}
+          </option>
+        </select>
+      </div>
+  
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label class="form-label">Fecha de inicio</label>
+          <input type="date" class="form-control" formControlName="from">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Fecha de finalización</label>
+          <div class="input-group">
+            <input type="date" class="form-control" formControlName="to" 
+                  [disabled]="experienciaForm.get('situation')?.value === 'En curso'">
+                  <div class="input-group-text">
+                    <input class="form-check-input mt-0" type="checkbox" 
+                          (change)="toggleCurrent($event)" 
+                          [checked]="experienciaForm.get('situation')?.value === 'En curso'">
+                    <label class="ms-2">En curso</label>
+                  </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <label class="form-label">Descripción del puesto</label>
+        <textarea class="form-control" formControlName="jobDescription" rows="5"></textarea>
+      </div>
+  
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss()">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="onSubmit()" 
+               [disabled]="experienciaForm.invalid">Guardar</button>
+      </div>
+    </form>
+  </div>
