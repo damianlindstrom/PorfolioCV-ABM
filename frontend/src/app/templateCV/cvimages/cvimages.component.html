@@ -1,0 +1,27 @@
+<div class="container mt-5 py-4">
+  <div class="d-flex flex-column align-items-center">
+    <!-- Foto de perfil -->
+    <img [src]="(fotoPerfil$ | async) || 'assets/profile/default-profile.jpg'"
+     (error)="onImageError($event)"
+     class="rounded-circle mx-auto d-block py-2 px-2"
+     style="width: 180px; height: 180px; object-fit: cover;">
+    
+    <!-- Biografía (nuevo) -->
+    <div class="text-center mt-3 px-4 bio">
+      <p class="lead" *ngIf="bio$ | async as bio; else noBio">
+        {{ bio }}
+      </p>
+      <ng-template #noBio>
+        <p class="text-muted">(No hay biografía aún)</p>
+      </ng-template>
+    </div>
+    
+    <!-- Botón unificado (cambiado a azul) -->
+    <button 
+      class="btn btn-primary btn-sm mt-3" 
+      (click)="openEditProfileModal()"
+    >
+      <i class="bi bi-pencil"></i> Editar perfil
+    </button>
+  </div>
+</div>
