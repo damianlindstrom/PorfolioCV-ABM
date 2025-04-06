@@ -4,12 +4,11 @@
     "description": "Backend para el portfolio con JSON Server y servidor de imágenes",
     "main": "server-api.js",
     "scripts": {
-        "start:api": "node server-api.js",
-        "start:images": "node server.js",
-        "start": "concurrently \"npm run start:api\" \"npm run start:images\"",
-        "dev": "set NODE_ENV=development&& npm start",
-        "prod": "set NODE_ENV=production&& npm start"
-    },
+    "start": "node server-api.js & node server.js",
+    "start:api": "node server-api.js",
+    "start:images": "node server.js",
+    "install-deps": "npm install"
+  },
     "dependencies": {
         "concurrently": "^8.2.1",
         "cors": "^2.8.5",
