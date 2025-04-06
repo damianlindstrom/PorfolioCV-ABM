@@ -1,59 +1,47 @@
 const express = require('express');
-const multer = require('multer');
-const path = require('path');
-const fs = require('fs-extra');
 const cors = require('cors');
+const jsonServer = require('json-server');
+const path = require('path');
 
 const app = express();
-const PORT = process.env.PORT_IMAGES || 3001;
+const PORT = process.env.PORT_API || 3000;
 
-// Configuración para producción
-const isProduction = process.env.NODE_ENV === 'production';
+// Configuración CORS
+app.use(cors());
 
-// Middleware CORS
-app.use(cors({
-  origin: isProduction ? 'https://tu-frontend.onrender.com' : '*'
-}));
+// Ruta ABSOLUTA a db.json
+const dbPath = path.join(__dirname, 'db.json');
 
-// Configura Multer para guardar en /public/profile
-const upload = multer({
-  storage: multer.diskStorage({
-    destination: (req, file, cb) => {
-      const dir = path.join(__dirname, '../public/profile');
-      fs.ensureDirSync(dir);
-      cb(null, dir);
-    },
-    filename: (req, file, cb) => {
-      cb(null, 'current.jpg'); // Siempre el mismo nombre
-    }
-  }),
-  limits: { fileSize: 5 * 1024 * 1024 } // 5MB
+// Crear servidor JSON
+const jsonApp = jsonServer.create();
+const router = jsonServer.router(dbPath);
+const middlewares = jsonServer.defaults();
+
+// Configurar middlewares
+jsonApp.use(middlewares);
+jsonApp.use(router);
+
+// Montar json-server en /api
+app.use('/api', jsonApp);
+
+// Endpoint de verificación
+app.get('/', (req, res) => {
+  res.json({
+    status: 'API funcionando',
+    dbLocation: dbPath,
+    endpoints: [
+      '/api/educacion',
+      '/api/perfil/1',
+      '/api/lenguajes'
+    ]
+  });
 });
 
-// Endpoint para subir imágenes
-app.post('/upload-profile-image', upload.single('image'), (req, res) => {
-  try {
-    if (!req.file) {
-      return res.status(400).json({ error: 'No se recibió ningún archivo' });
-    }
-    
-    const imageUrl = isProduction
-      ? `https://tu-backend.onrender.com/profile/current.jpg`
-      : `http://localhost:${PORT}/profile/current.jpg`;
-
-    res.json({ 
-      imageUrl,
-      imagePath: '/profile/current.jpg' // Ruta relativa para la BD
-    });
-  } catch (error) {
-    console.error('Error al subir imagen:', error);
-    res.status(500).json({ error: 'Error interno del servidor' });
-  }
-});
-
-// Servir archivos estáticos desde /public
-app.use('/profile', express.static(path.join(__dirname, '../public/profile')));
-
+// Iniciar servidor
 app.listen(PORT, () => {
-  console.log(`Servidor de imágenes en http://localhost:${PORT}`);
+  console.log(`✅ Servidor API en http://localhost:${PORT}`);
+  console.log(`📂 db.json ubicado en: ${dbPath}`);
+  console.log('📌 Endpoints disponibles:');
+  console.log(`   - http://localhost:${PORT}/api/educacion`);
+  console.log(`   - http://localhost:${PORT}/api/perfil/1`);
 });

@@ -9,27 +9,25 @@ const PORT = process.env.PORT_IMAGES || 3001;
 
 // Configuración para producción
 const isProduction = process.env.NODE_ENV === 'production';
-const publicDir = path.join(__dirname, '../public'); // Ajuste para estructura actual
 
-// Configura CORS para producción
+// Middleware CORS
 app.use(cors({
-  origin: isProduction 
-    ? ['https://tu-frontend.onrender.com'] 
-    : '*'
+  origin: isProduction ? '' : '*'
 }));
 
-// Configura Multer
+// Configura Multer para guardar en /public/profile
 const upload = multer({
   storage: multer.diskStorage({
     destination: (req, file, cb) => {
-      fs.ensureDirSync(publicDir);
-      cb(null, publicDir);
+      const dir = path.join(__dirname, '../public/profile');
+      fs.ensureDirSync(dir);
+      cb(null, dir);
     },
     filename: (req, file, cb) => {
-      cb(null, 'current.jpg');
+      cb(null, 'current.jpg'); // Siempre el mismo nombre
     }
   }),
-  limits: { fileSize: 5 * 1024 * 1024 }
+  limits: { fileSize: 5 * 1024 * 1024 } // 5MB
 });
 
 // Endpoint para subir imágenes
@@ -40,14 +38,13 @@ app.post('/upload-profile-image', upload.single('image'), (req, res) => {
     }
     
     const imageUrl = isProduction
-      ? `https://geni-entors-images.onrender.com/current.jpg`
-      : `http://localhost:${PORT}/current.jpg`;
+      ? `https://tu-backend.onrender.com/profile/current.jpg`
+      : `http://localhost:${PORT}/profile/current.jpg`;
 
     res.json({ 
       imageUrl,
-      imagePath: '/current.jpg'
+      imagePath: '/profile/current.jpg' // Ruta relativa para la BD
     });
-
   } catch (error) {
     console.error('Error al subir imagen:', error);
     res.status(500).json({ error: 'Error interno del servidor' });
@@ -55,7 +52,7 @@ app.post('/upload-profile-image', upload.single('image'), (req, res) => {
 });
 
 // Servir archivos estáticos desde /public
-app.use(express.static(publicDir));
+app.use('/profile', express.static(path.join(__dirname, '../public/profile')));
 
 app.listen(PORT, () => {
   console.log(`Servidor de imágenes en http://localhost:${PORT}`);

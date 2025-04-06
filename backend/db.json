@@ -32,7 +32,7 @@
   "perfil": [
     {
       "id": "1",
-      "fotoPerfil": "/current.jpg",
+      "fotoPerfil": "/profile/current.jpg",
       "bio": "esto persiste?"
     }
   ],
