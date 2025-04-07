@@ -133,29 +133,29 @@
       "id": 1
     },
     {
+      "nombre": "Metodologías agiles: Scrum",
+      "nivel": 90,
+      "id": 2
+    },
+    {
       "nombre": "Capacidad de organización",
       "nivel": 80,
-      "id": 2
+      "id": 3
     },
     {
       "nombre": "Trabajo en equipo",
       "nivel": 85,
-      "id": 3
-    },
-    {
-      "nombre": "Metodologías agiles: Scrum",
-      "nivel": 90,
-      "id": 5
+      "id": 4
     },
     {
       "nombre": "Comunicación clara",
       "nivel": 100,
-      "id": 6
+      "id": 5
     },
     {
       "nombre": "Resolución de problemas",
       "nivel": 90,
-      "id": 7
+      "id": 6
     }
   ],
   "cursos": [
