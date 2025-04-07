@@ -14,3 +14,6 @@ p.lead {
     color: whitesmoke;
     
 }
+div p {
+    font-size: 0.9em
+}

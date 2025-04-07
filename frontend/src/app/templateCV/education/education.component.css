@@ -25,3 +25,6 @@ li.mb-4.p-3:hover{
     color: black;
     cursor: pointer;
 }
+h5, p {
+    font-size: 0.9em;
+}

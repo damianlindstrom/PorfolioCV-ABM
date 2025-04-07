@@ -1,9 +1,5 @@
 <section class="mt-4 py-3">
-  <div class="row">
-    <button class="btn btn-primary" (click)="edicionPersonalData()">
-      <i class="bi bi-pencil"></i> Editar información
-    </button>
-  </div>
+
 
   <div class="container-fluid m-2" *ngIf="personalData$ | async as personalData">
     <h2>Información personal</h2>
@@ -26,5 +22,10 @@
         {{ personalInfoApplicant.personalCookie.domicilioApplicant }}
       </li>    
     </ul>
+  </div>
+  <div class="row">
+    <button class="btn btn-primary" (click)="edicionPersonalData()">
+      <i class="bi bi-pencil"></i> Editar información
+    </button>
   </div>
 </section>

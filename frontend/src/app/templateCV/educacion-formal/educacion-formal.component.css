@@ -23,3 +23,6 @@ li.mb-1.p-3:hover{
     color: red;
     cursor: pointer;
 }
+h5, p {
+    font-size: 0.9em
+}
