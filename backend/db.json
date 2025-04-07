@@ -1,82 +1,161 @@
 {
   "educacion": [
     {
-      "title": "Periodista en cosas",
-      "from": "2020-01-01",
+      "title": "Tecnicatura Superior en Programación",
+      "from": "2025-02-28",
       "to": "a la actualidad",
-      "institucion": "Rolando Graña Institute",
+      "institucion": "Universidad Técnologica Nacional - UTN",
       "state": "En curso",
       "id": 1
+    },
+    {
+      "title": "Martillero publico, corredor y tasador",
+      "from": "2009-03-01",
+      "to": "2010-06-01",
+      "institucion": "Universidad de Lomas de Zamora",
+      "state": "Incompleto",
+      "id": 2
+    },
+    {
+      "title": "Bachiller en Economía y Gestión",
+      "from": "2005-03-07",
+      "to": "2007-11-30",
+      "institucion": "Instituto Victoria Ocampo",
+      "state": "Completo",
+      "id": 3
     }
   ],
   "experiencia": [
     {
-      "jobTitle": "Desarrollador FrontEnd",
-      "empresa": "IWGIA",
-      "situation": "Freelancer",
-      "from": "01/07/2019",
-      "to": "31/01/2024",
-      "jobDescription": "Me rasco el pito forever",
+      "jobTitle": "Analista Contable",
+      "empresa": "4 Commerce SRL",
+      "situation": "Relación de dependencia",
+      "from": "2022-02-14",
+      "to": "2025-02-28",
+      "jobDescription": "Carga de facturas en Sistema Tango (con imputación contable), Emisión de Ordenes de Pago, Carga de transferencias en Interbanking, Pago de impuestos en Interbanking, Conciliación bancaria, Creación y actualización de reportes de Cobranzas, Gestión de Cobranzas, Atención a clientes corporativos y organismos publicos. Carga de recibos, Ageing períodico de clientes, Mejora de informes financieros mediante una meticulosa recopilación y análisis de datos.\n",
       "id": "1"
     },
     {
-      "id": "2",
+      "jobTitle": "Desarrollador FrontEnd",
+      "empresa": "IWGIA",
+      "situation": "Freelancer",
+      "from": "2019-07-01",
+      "to": "2024-01-01",
+      "jobDescription": "Desarrollo del sitio web 'debatesindigenas.org', Mantenimiento técnico y actualización del sitio, Desarrollo, diseño y programación de buscador web PHP/MySQL, diseño y programación de campañas de mailing, Coordinación técnica con empresa proveedora de hosting",
+      "id": "2"
+    },
+    {
       "jobTitle": "Analista Contable",
-      "jobDescription": "Carga de facturas...",
-      "from": "14/02/2022",
-      "to": "28/02/2025",
+      "empresa": "Control Union Argentina S.A",
       "situation": "Relación de dependencia",
-      "empresa": "4 Commerce SRL"
+      "from": "2014-02-01",
+      "to": "2019-03-31",
+      "jobDescription": "Carga de facturas en Sistema Contable Softland Logic, Emisión de Ordenes de Pago, Carga de transferencias en Interbanking, Pago de impuestos en Interbanking, Conciliación bancaria, Creación y actualización de reportes de Cobranzas, Gestión de Cobranzas.",
+      "id": "4ke9iFy"
+    },
+    {
+      "jobTitle": "Auxiliar Administrativo",
+      "empresa": "Telcom Ventures De Argentina S.A",
+      "situation": "Relación de dependencia",
+      "from": "2011-08-01",
+      "to": "2013-07-31",
+      "jobDescription": "Carga de facturas en Sistema Contable Tango, Registro de autorizaciones de Pago, Armado y control de Legajos de Pago, Carga y pago de Rendiciones de Gastos\n",
+      "id": "0XHFaGb"
     }
   ],
   "perfil": [
     {
       "id": "1",
       "fotoPerfil": "/profile/current.jpg",
-      "bio": "esto persiste?"
+      "bio": "Soy un profesional con más de diez\naños de experiencia en administración,\ndonde desarrollé una fuerte capacidad\nde análisis y resolución de problemas.\nActualmente, sigo ampliando mis\nconocimientos en programación,\naplicando mis habilidades técnicas para\ntransformar procesos y orientando mi\ndesarrollo profesional hacia el ámbito\ntecnológico"
     }
   ],
   "lenguajes": [
     {
       "id": "2",
-      "nombre": "TypeScript",
-      "nivel": 80,
-      "color": "#3178c6"
+      "nombre": "HTML/CSS",
+      "nivel": 100,
+      "color": "#44ff00"
     },
     {
       "id": "3",
-      "nombre": "Python",
-      "nivel": 70,
-      "color": "#3776ab"
+      "nombre": "Bootstrap",
+      "nivel": 90,
+      "color": "#2cb007"
     },
     {
       "id": "4",
-      "nombre": "HTML/CSS",
-      "nivel": 90,
-      "color": "#e34c26"
+      "nombre": "Angular",
+      "nivel": 65,
+      "color": "#037e01"
     },
     {
       "id": "4cd0",
-      "nombre": "Pito",
+      "nombre": "JavaScript (ES6+)",
+      "nivel": 60,
+      "color": "#238217"
+    },
+    {
+      "nombre": "MySQL",
+      "nivel": 60,
+      "color": "#1c7f1a",
+      "id": "eQ5WpFl"
+    },
+    {
+      "nombre": "Python",
+      "nivel": 30,
+      "color": "#1a5a16",
+      "id": "bZmVgNk"
+    },
+    {
+      "nombre": "Java (Springboot)",
+      "nivel": 25,
+      "color": "#456837",
+      "id": "NYBZoSa"
+    },
+    {
+      "nombre": "TypeScript",
+      "nivel": 65,
+      "color": "#15a512",
+      "id": "GtDdawz"
+    },
+    {
+      "nombre": "Git/Github",
       "nivel": 50,
-      "color": "#35ed38"
+      "color": "#238221",
+      "id": "u-wD2ZV"
     }
   ],
   "softSkills": [
     {
-      "id": "1",
+      "nombre": "Inglés Técnico: Oral y Escrito",
+      "nivel": 80,
+      "id": 1
+    },
+    {
+      "nombre": "Capacidad de organización",
+      "nivel": 80,
+      "id": 2
+    },
+    {
       "nombre": "Trabajo en equipo",
-      "nivel": 85
+      "nivel": 85,
+      "id": 3
     },
     {
-      "id": "3",
+      "nombre": "Metodologías agiles: Scrum",
+      "nivel": 90,
+      "id": 5
+    },
+    {
+      "nombre": "Comunicación clara",
+      "nivel": 100,
+      "id": 6
+    },
+    {
       "nombre": "Resolución de problemas",
-      "nivel": 80
-    },
-    {
-      "id": "bc60",
-      "nombre": "Armar porro",
-      "nivel": 97
+      "nivel": 90,
+      "id": 7
     }
   ],
   "cursos": [
@@ -84,22 +163,29 @@
       "id": "1",
       "title": "Argentina Programa",
       "institucion": "Ministerio de Desarrollo / CESSI",
-      "from": "01/06/2020",
-      "to": "30/11/2021"
+      "from": "2020-06-01",
+      "to": "2021-11-30"
     },
     {
       "id": "2",
       "title": "Introducción al desarrollo web II (HTML5, CSS, JS)",
       "institucion": "Google Academy",
-      "from": "01/05/2018",
-      "to": "30/06/2018"
+      "from": "2018-05-01",
+      "to": "2018-06-30"
     },
     {
       "id": "0796",
-      "title": "Fumar faso y coso",
-      "institucion": "Snoop Dogg Institute",
-      "from": "2007-01-01",
-      "to": "2025-01-01"
+      "title": "Liquidación de Sueldos y Jornales",
+      "institucion": "Facultad de Ciencias Economicas UBA",
+      "from": "2008-03-31",
+      "to": "2008-04-20"
+    },
+    {
+      "title": "Asistente Contable (Integral)",
+      "institucion": "Facultad de Ciencias Economicas UBA",
+      "from": "2008-03-01",
+      "to": "2008-03-31",
+      "id": "4ML1KvY"
     }
   ],
   "datosPersonales": {

@@ -9,7 +9,7 @@
     <!-- Biografía (nuevo) -->
     <div class="text-center mt-3 px-4 bio">
       <p class="lead" *ngIf="bio$ | async as bio; else noBio">
-        {{ bio }}
+        "{{ bio }}"
       </p>
       <ng-template #noBio>
         <p class="text-muted">(No hay biografía aún)</p>
