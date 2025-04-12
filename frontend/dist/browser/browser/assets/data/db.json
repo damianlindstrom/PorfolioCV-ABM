@@ -1,0 +1,28 @@
+{
+    "educacion": [
+    {
+      "id": 1,
+      "title": "Licenciatura en Informática",
+      "from": "2015-03-01",
+      "to": "2020-12-15",
+      "institucion": "Universidad Nacional",
+      "state": "Completo"
+    }
+  ],
+    "experiencia": [
+      {
+        "id": 1,
+        "position": "Desarrollador Frontend",
+        "company": "Tech Solutions",
+        "period": "2020-2023",
+        "description": "Desarrollo de aplicaciones con Angular"
+      }
+    ],
+    "habilidades": [
+      {
+        "id": 1,
+        "name": "Angular",
+        "level": "Avanzado"
+      }
+    ]
+  }
