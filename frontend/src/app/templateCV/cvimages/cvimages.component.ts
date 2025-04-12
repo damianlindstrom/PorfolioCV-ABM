@@ -4,6 +4,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EditarPerfilModalComponent } from '../../modals/editar-perfil-modal/editar-perfil-modal.component';
 import { AsyncPipe, CommonModule, NgIf } from '@angular/common';
 import { take } from 'rxjs/operators';
+import { EditModeService } from '../../services/edit-mode.service';
 
 @Component({
   selector: 'app-cvimages',
@@ -13,13 +14,16 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./cvimages.component.css']
 })
 export class CVimagesComponent {
+ 
+
   fotoPerfil$;
   bio$;
   timestamp = Date.now();
 
   constructor(
     private perfilService: PerfilService,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+  
   ) {
     this.fotoPerfil$ = this.perfilService.fotoPerfil$
     this.bio$ = this.perfilService.bio$

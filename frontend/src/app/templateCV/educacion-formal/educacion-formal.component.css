@@ -1,6 +1,10 @@
 
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+}
 h2 {
-    font-size: 1.2em;
+    font-size: 1em;
     text-decoration: underline;
     margin: auto;
     color: black;
@@ -8,7 +12,7 @@ h2 {
     line-height: 2;
 }
 ul li {
-    font-size: 1.05em;
+    font-size: 0.9em;
     margin: auto;
     color: black;
 }

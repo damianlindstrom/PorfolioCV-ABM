@@ -15,4 +15,5 @@ import { LenguajesComponent } from '../lenguajes/lenguajes.component';
 })
 export class CompletedTemplateComponent {
 
+
 }

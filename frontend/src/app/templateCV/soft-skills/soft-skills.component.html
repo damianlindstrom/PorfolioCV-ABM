@@ -10,7 +10,7 @@
       <div class="list-group">
         <div *ngFor="let skill of skills$ | async" class="list-group-item">
           <div class="d-flex justify-content-between align-items-center">
-            <span class="fw-bold">{{ skill.nombre }}</span>
+            <span>{{ skill.nombre }}</span>
             <div class="btn-group">
               <button class="btn btn-outline-primary btn-sm" (click)="abrirModalEditar(skill)">
                 <i class="bi bi-pencil"></i>

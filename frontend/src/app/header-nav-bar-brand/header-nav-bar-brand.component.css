@@ -1,3 +1,15 @@
 div a {
     font-size: 0.9em;
 }
+li.nav-item a::after {
+    content: "";
+    display: block;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    transform: scale(0,1);
+    transform-origin: center;
+    transition: transform .25s;
+}
+li.nav-item a:hover::after {
+    transform: scale(1,1);
+  }

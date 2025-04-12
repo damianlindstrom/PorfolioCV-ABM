@@ -1,3 +1,7 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+}
 div.container {
     background-color: lightslategray;
 }
@@ -9,7 +13,7 @@ div.bio {
 }
 
 p.lead {
-    font-size: 1.15em;
+    font-size: 1em;
     margin: auto;
     color: whitesmoke;
     
