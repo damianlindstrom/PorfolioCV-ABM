@@ -21,8 +21,8 @@ body{
 div.titulo {
     position: relative;
     z-index: 0;
-    top: 30vh;
-    left: 33%;
+    top: 40vh;
+    left: 9%;
 }
 @media (max-width: 992px) {
     div.titulo {
