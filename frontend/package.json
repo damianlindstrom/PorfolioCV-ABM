@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --configuration=production --output-path=dist/render/browser",
-    "postbuild": "mv dist/render/browser/* dist/browser/ && rm -rf dist/render",
+    "build": "ng build --configuration=production --output-path=dist/render",
+    "postbuild": "mkdir -p dist/browser && cp -a dist/render/. dist/browser/ && rm -rf dist/render",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build:prod": "ng build --configuration production",
