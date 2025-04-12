@@ -1,16 +1,16 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { provideRouter } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ApplicationConfig } from '@angular/core';
+import { provideRouter, withEnabledBlockingInitialNavigation } from '@angular/router';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { BrowserModule } from '@angular/platform-browser';
+import { provideClientHydration } from '@angular/platform-browser';
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes),
-    importProvidersFrom(BrowserModule),
-    provideHttpClient(withInterceptorsFromDi()),
-    provideRouter([]),
-    importProvidersFrom(NgbModule)
+    provideRouter(
+      routes,
+      withEnabledBlockingInitialNavigation() // ← Solución clave
+    ),
+    provideClientHydration(),
+    provideHttpClient(withInterceptorsFromDi())
   ]
 };

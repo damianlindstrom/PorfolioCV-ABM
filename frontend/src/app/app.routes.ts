@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { CompletedTemplateComponent } from './templateCV/completed-template/completed-template.component';
 import { CvEstaticoComponent } from './cv-estatico/cv-estatico.component';
+
 export const routes: Routes = [
   { 
     path: '', 
