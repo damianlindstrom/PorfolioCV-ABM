@@ -45,7 +45,7 @@ div.titulo {
 }
 h1 {
     background: #000000;
-    background: linear-gradient(to right, #f5f3f3 0%, #0479ff 30%);
+    background: linear-gradient(to right, #f5f3f3 35%, #0479ff 70%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
